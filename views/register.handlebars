@@ -1,0 +1,77 @@
+{{>nav}}
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-8 ">
+      <div class="row text-end">
+        <div class="col-md-10 text-end ">
+          <p>Already have account</p>
+          <div class="f_p">
+            <a href="" class="text-decoration-none f_p">I forget my user id and password</a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <span></span><a href="/login" class="btn btn-primary"><i class="fa fa-lock"></i> &nbsp;&nbsp;Sign in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 reg bg-light p-4 mt-2 mb-5 rounded">
+      {{#if errMsg}}
+      <div class="alert alert-danger">{{errMsg}}</div>
+      {{/if}}
+      {{#if successMsg}}
+      <div class="alert alert-success">{{successMsg}}</div>
+      {{/if}}
+      <h2 class="text-center fs-3"> Register Here </h2>
+      <form method="post" action="/save_registration">
+        <div class="mb-3 text-start">
+          <label for="exampleInputEmail1" class="form-label fw-bold">Full Name</label>
+          {{#if nameErr}}
+          <p class="text-danger">{{nameErr}}</p>
+          {{/if}}
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name"
+            required>
+        </div>
+        <div class="mb-3 text-start">
+          <label for="exampleInputEmail1" class="form-label fw-bold">Email address</label>
+          {{#if emailErr}}
+          <p class="text-danger">{{emailErr}}</p>
+          {{/if}}
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+            required>
+        </div>
+        <div class="mb-3 text-start">
+          <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
+          {{#if passErr}}
+          <p class="text-danger">{{passErr}}</p>
+          {{/if}}
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+        </div>
+
+        <div class="mb-3 text-start">
+          <label for="exampleInputPassword1" class="form-label fw-bold">Age</label>
+          {{#if ageErr}}
+          <p class="text-danger">{{ageErr}}</p>
+          {{/if}}
+          <input type="text" class="form-control" id="exampleInputPassword1" name="age" required>
+        </div>
+        <div class="mb-3 text-start">
+          <label for="exampleInputPassword1" class="form-label fw-bold">City</label>
+          {{#if cityErr}}
+          <p class="text-danger">{{cityErr}}</p>
+          {{/if}}
+          <input type="text" class="form-control" id="exampleInputPassword1" name="city" required>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="submit">
+
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+{{>footer}}
+</body>
+</html>
