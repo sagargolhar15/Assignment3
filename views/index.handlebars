@@ -1,0 +1,17 @@
+{{>nav}}
+{{#if successMsg}}
+<div class="toa st-body bg-success text-light position-fixed end-0 p-2" id="toast" style="z-index:11;border-radius:4px;top:10px">{{successMsg}}  ......!</div>
+{{/if}}
+<h1>This is home page</h1>
+<h3>Hello, {{email}}</h3>
+<a href="/login">Goto Login</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+  $('#toast').delay(2000).fadeOut('slow');
+</script>
+
+  {{>footer}}
+
+</body>
+
+</html>
